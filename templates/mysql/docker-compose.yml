@@ -12,12 +12,10 @@ mysql:
   image: mysql:latest
   volumes:
   - /www/mysql_test:/var/lib/mysql
-  stdin_open: true
-  links:
-  - mysql-backup:mysql-backup  
+  stdin_open: true  
 mysql-backup:
   environment:
-    MYSQL_HOST: titan01.dev-ops.de
+    MYSQL_HOST: mysql
     MYSQL_PORT: '3306'
     MYSQL_USER: root
     MYSQL_PASS: test123
@@ -27,6 +25,8 @@ mysql-backup:
     io.rancher.container.pull_image: always
   tty: true
   image: tutum/mysql-backup
+  links:
+  - mysql:mysql
   volumes:
   - /www/mysql_backup:/backup
   stdin_open: true
