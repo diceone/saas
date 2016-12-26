@@ -3,6 +3,9 @@ mysql:
   - 3306:3306/tcp
   environment:
     MYSQL_ROOT_PASSWORD: test123
+    MYSQL_USER: test
+    MYSQL_PASSWORD: test
+    MYSQL_DATABASE: test
   labels:
     io.rancher.container.pull_image: always
   tty: true
