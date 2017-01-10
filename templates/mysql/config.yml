@@ -1,5 +1,5 @@
 name: mysql
 description: |
   MYSQL latest Database and automatic MYSQL database backup.
-version: 5.7.15
+version: v1
 category: Database

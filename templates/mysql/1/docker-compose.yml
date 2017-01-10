@@ -1,0 +1,37 @@
+mysql:
+  ports:
+  - ${MYSQL_DBPORT}:3306/tcp
+  environment:
+    MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    MYSQL_USER: ${MYSQL_USER}
+    MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    MYSQL_DATABASE: ${MYSQL_DATABASE}
+  labels:
+    io.rancher.container.pull_image: always
+    io.rancher.scheduler.affinity:host_label: ${HOST_LABEL}
+  tty: true
+  image: mysql:latest
+  hostname: mysql
+  volumes:
+  - ${MYSQL_VOL}:/var/lib/mysql
+  volume_driver: ${VOLUME_DRIVER}
+  stdin_open: true
+mysql-backup:
+  environment:
+    MYSQL_HOST: mysql
+    MYSQL_PORT: ${MYSQL_DBPORT}
+    MYSQL_USER: root
+    MYSQL_PASS: ${MYSQL_ROOT_PASSWORD}
+    CRON_TIME: ${MYSQL_CRON}
+    MAX_BACKUPS: ${MAX_BACKUPS}
+  labels:
+    io.rancher.container.pull_image: always
+    io.rancher.scheduler.affinity:host_label: ${HOST_LABEL}
+  tty: true
+  image: tutum/mysql-backup
+  links:
+  - mysql:mysql
+  volumes:
+  - ${MYSQL_BACKUP_VOL}:/backup
+  volume_driver: ${VOLUME_DRIVER}
+  stdin_open: true
