@@ -1,24 +1,24 @@
 mysql:
   ports:
-  - 3306:3306/tcp
+  - ${MYSQL_DBPORT}:3306/tcp
   environment:
-    MYSQL_ROOT_PASSWORD: test123
-    MYSQL_USER: test
-    MYSQL_PASSWORD: test
-    MYSQL_DATABASE: test
+    MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    MYSQL_USER: ${MYSQL_USER}
+    MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    MYSQL_DATABASE: ${MYSQL_DATABASE}
   labels:
     io.rancher.container.pull_image: always
   tty: true
   image: mysql:latest
   volumes:
   - /www/mysql_test:/var/lib/mysql
-  stdin_open: true  
+  stdin_open: true
 mysql-backup:
   environment:
     MYSQL_HOST: mysql
     MYSQL_PORT: '3306'
     MYSQL_USER: root
-    MYSQL_PASS: test123
+    MYSQL_PASS: ${MYSQL_ROOT_PASSWORD}
     CRON_TIME: '*/5 * * * *'
     MAX_BACKUPS: '3'
   labels:

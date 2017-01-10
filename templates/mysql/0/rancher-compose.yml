@@ -1,0 +1,40 @@
+.catalog:
+    name: 'mysql'
+    version: 'v1'
+    description: 'mysql:latest plus bkp'
+    questions:
+     - variable: 'MYSQL_DBPORT'
+       label: 'MYSQL DB PORT'
+       description: '3306'
+       type: 'int'
+       default: 3306
+       required: true
+     - variable: 'MYSQL_ROOT_PASSWORD'
+       label: 'MYSQL_ROOT_PASSWORD'
+       description: 'test123'
+       type: 'string'
+       default: test123
+       required: true
+     - variable: 'MYSQL_USER'
+       label: 'MYSQL_USER'
+       description: 'test'
+       type: 'string'
+       default: test
+       required: true
+     - variable: 'MYSQL_PASSWORD'
+       label: 'MYSQL_PASSWORD'
+       description: 'test'
+       type: 'string'
+       default: test
+       required: true
+     - variable: 'MYSQL_DATABASE'
+       label: 'MYSQL_DATABASE'
+       description: 'test'
+       type: 'string'
+       default: test
+       required: true
+
+mysql:
+  scale: 1
+mysql-backup:
+  scale: 1
