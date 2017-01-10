@@ -33,7 +33,33 @@
        type: 'string'
        default: test
        required: true
-
+     - variable: 'MYSQL_CRON'
+       label: 'MYSQL_CRON'
+       description: 'mysql backup cron configuration'
+       type: 'string'
+       default: */5 * * * *
+       required: true
+     - variable: 'MAX_BACKUPS'
+       label: 'MAX_BACKUPS'
+       description: 'MAX_BACKUPS'
+       type: 'string'
+       default: '3'
+       required: true
+     - variable: 'MYSQL_VOL'
+       label: 'MYSQL_VOL'
+       description: 'mysql volume on host or nfs'
+       type: 'string'
+       default: /www/mysql
+       required: true
+     - variable: 'VOLUME_DRIVER'
+       label: 'VOLUME_DRIVER'
+       description: 'VOLUME_DRIVER local or convoy-nfs'
+       type: 'enum'
+       options:
+         - local
+         - convoy-nfs
+       default: 'local
+       required: true
 mysql:
   scale: 1
 mysql-backup:
