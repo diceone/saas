@@ -66,6 +66,10 @@
          - convoy-nfs
        default: 'local'
        required: true
+     - variable: 'HOST_LABEL'
+       label: 'HOST_LABEL'
+       description: 'Host label for deployment'
+       required: false
 mysql:
   scale: 1
 mysql-backup:
