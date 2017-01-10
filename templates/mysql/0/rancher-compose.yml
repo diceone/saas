@@ -64,7 +64,7 @@
        options:
          - local
          - convoy-nfs
-       default: 'local
+       default: 'local'
        required: true
 mysql:
   scale: 1
