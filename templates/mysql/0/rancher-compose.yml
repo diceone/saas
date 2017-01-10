@@ -1,6 +1,6 @@
 .catalog:
     name: 'mysql'
-    version: 'v1'
+    version: '5.7.15'
     description: 'mysql:latest plus bkp'
     questions:
      - variable: 'MYSQL_DBPORT'

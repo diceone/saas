@@ -10,7 +10,7 @@ mysql:
     io.rancher.container.pull_image: always
     io.rancher.scheduler.affinity:host_label: ${HOST_LABEL}
   tty: true
-  image: mysql:latest
+  image: mysql:5.7.15
   hostname: mysql
   volumes:
   - ${MYSQL_VOL}:/var/lib/mysql
