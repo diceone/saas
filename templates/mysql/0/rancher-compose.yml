@@ -51,6 +51,12 @@
        type: 'string'
        default: /www/mysql
        required: true
+     - variable: 'MYSQL_BACKUP_VOL'
+       label: 'MYSQL_BACKUP_VOL'
+       description: 'mysql backup volume on host or nfs'
+       type: 'string'
+       default: /www/mysql_backup
+       required: true
      - variable: 'VOLUME_DRIVER'
        label: 'VOLUME_DRIVER'
        description: 'VOLUME_DRIVER local or convoy-nfs'
