@@ -30,7 +30,7 @@ mysql-backup:
   tty: true
   image: tutum/mysql-backup
   links:
-  - mysql
+  - mysql:mysql
   volumes:
   - ${MYSQL_BACKUP_VOL}:/backup
   volume_driver: ${VOLUME_DRIVER}
