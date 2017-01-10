@@ -11,25 +11,25 @@
        required: true
      - variable: 'MYSQL_ROOT_PASSWORD'
        label: 'MYSQL_ROOT_PASSWORD'
-       description: 'test123'
+       description: 'MySQL root password'
        type: 'string'
        default: "test123"
        required: true
      - variable: 'MYSQL_USER'
        label: 'MYSQL_USER'
-       description: 'test'
+       description: 'MYSQL User for database'
        type: 'string'
        default: "test"
        required: true
      - variable: 'MYSQL_PASSWORD'
        label: 'MYSQL_PASSWORD'
-       description: 'test'
+       description: 'MySQL User Password'
        type: 'string'
        default: "test"
        required: true
      - variable: 'MYSQL_DATABASE'
        label: 'MYSQL_DATABASE'
-       description: 'test'
+       description: 'Optional MySQL Database'
        type: 'string'
        default: "test"
        required: true
