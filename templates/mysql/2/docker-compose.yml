@@ -8,6 +8,7 @@ mysql:
     MYSQL_DATABASE: ${MYSQL_DATABASE}
   labels:
     io.rancher.container.pull_image: always
+    io.rancher.container.dns: true
     io.rancher.scheduler.affinity:host_label: ${HOST_LABEL}
   tty: true
   image: mysql:8.0.0
