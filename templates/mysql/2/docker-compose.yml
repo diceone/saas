@@ -12,7 +12,7 @@ mysql:
     io.rancher.scheduler.affinity:host_label: ${HOST_LABEL}
   tty: true
   image: mysql:8.0.0
-  hostname: mysql
+  hostname: mysql.rancher.internal
   volumes:
   - ${MYSQL_VOL}:/var/lib/mysql
   volume_driver: ${VOLUME_DRIVER}
