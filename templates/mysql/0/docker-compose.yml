@@ -18,7 +18,7 @@ mysql:
   stdin_open: true
 mysql-backup:
   environment:
-    MYSQL_HOST: mysql
+    MYSQL_HOST: mysql.rancher.internal
     MYSQL_PORT: ${MYSQL_DBPORT}
     MYSQL_USER: root
     MYSQL_PASS: ${MYSQL_ROOT_PASSWORD}
